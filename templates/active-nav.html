@@ -1,0 +1,13 @@
+<script>
+  var url_re = /(?:https|http):\/\/(?:.+?)(?:\.org|5000)(.+?)(?:$|#)/g;
+  var url = window.location.href;
+  var suffix = url_re.exec(url)[1];
+
+  if(suffix == "" || suffix == "/"){
+    document.querySelector("#nav-home").className += " active";
+  }else if(suffix == "/bot-status" || suffix == "/bot-status/"){
+    document.querySelector("#nav-bot-status").className += " active";
+  }else if(suffix == "/updates" || suffix == "/updates/"){
+    document.querySelector("#nav-updates").className += " active";
+  }
+</script>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% include 'header.html' %}
+</head>
+<body>
+
+<style> 
+  {% include 'staple.css' %}
+  #main-container{
+    height: 100%;
+  }
+
+  #firstParallax{
+    /* The image used */
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('static/img_parallax2.jpg');
+
+    /* Set a specific height */
+    height: 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: relative;
+  }
+
+  #secondParallax{
+    /* The image used */
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('static/img_parallax3.jpg');
+
+    /* Set a specific height */
+    height: 100%; 
+    min-height: 1100px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: relative;
+
+    padding-top: 60px;
+  }
+
+
+  #introContainer{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .headingText{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 37px;
+    color: white;
+    text-align: center;
+    font-weight: 575;
+    text-align: center;
+  }
+
+  .card-img-top{
+    height: 66%;
+  }
+</style>
+
+<div id="main-container">
+  <div id="firstParallax">
+    {% include 'navbar.html' %}
+    <div id="introContainer">
+      <h2 class="headingText">Hi, I'm Zach. I love artificial intelligence, algorithms and learning.</h2>
+    </div>
+  </div>
+
+  <div id="secondParallax">
+    <div class="container">
+      <div class="row">
+        <h2 class="headingText" style="width: 100%;">Projects</h2>
+      </div>
+      <div class="row" style="margin-top: 35px;">
+        <div class="col-4">
+          <div class="card">
+            <img class="card-img-top" src="static/gm_mlab.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Customer Complaint Analysis</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card">
+            <img class="card-img-top" src="static/followminer.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Instagram Automation Service</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card">
+            <img class="card-img-top" src="static/HashTagMap.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Hashtag Sentiment Analysis</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div> <!-- row -->
+      <div class="row" style="margin-top: 35px;">
+        <div class="col-4">
+          <div class="card">
+            <img class="card-img-top" src="static/sinekoGraphs.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Instagram Data Analytics</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card">
+            <img class="card-img-top" src="static/spider.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Web Crawlers</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card">
+            <img class="card-img-top" src="static/cs113.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Group Project Designs</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div> <!-- row -->
+      
+    </div>
+  </div>
+
+  {% include 'footer.html' %}
+</div><!--#main-container -->
+
+</body>
+
+<!-- Included scripts -->
+{% include 'active-nav.html' %}
+</html>
