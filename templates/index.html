@@ -13,7 +13,7 @@
 
   #firstParallax{
     /* The image used */
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('static/img_parallax2.jpg');
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/img_parallax2.jpg');
 
     /* Set a specific height */
     height: 100%;
@@ -29,11 +29,11 @@
 
   #secondParallax{
     /* The image used */
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('static/img_parallax3.jpg');
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/img_parallax3.jpg');
 
     /* Set a specific height */
     height: 100%; 
-    min-height: 1100px;
+    min-height: 1500px;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -66,6 +66,16 @@
   .card-img-top{
     height: 66%;
   }
+
+  .card{
+    transition: transform .2s; /* Animation */
+    text-decoration: none;
+  }
+
+  .card:hover {
+    transform: scale(1.1);
+    text-decoration: none;
+  }
 </style>
 
 <div id="main-container">
@@ -83,32 +93,31 @@
       </div>
       <div class="row" style="margin-top: 35px;">
         <div class="col-4">
-          <div class="card">
-            <img class="card-img-top" src="static/gm_mlab.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Customer Complaint Analysis</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+          <a href="/blog/gm_mlab/">
+            <div class="card">
+              <img class="card-img-top" src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/gm_mlab.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Customer Complaint Analysis</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
         <div class="col-4">
           <div class="card">
-            <img class="card-img-top" src="static/followminer.jpg" alt="Card image cap">
+            <img class="card-img-top" src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/followminer.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Instagram Automation Service</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
         </div>
         <div class="col-4">
           <div class="card">
-            <img class="card-img-top" src="static/HashTagMap.jpg" alt="Card image cap">
+            <img class="card-img-top" src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/blackJack.jpg" alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title">Hashtag Sentiment Analysis</h5>
+              <h5 class="card-title">Reinforcement Learning</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
         </div>
@@ -116,31 +125,39 @@
       <div class="row" style="margin-top: 35px;">
         <div class="col-4">
           <div class="card">
-            <img class="card-img-top" src="static/sinekoGraphs.jpg" alt="Card image cap">
+            <img class="card-img-top" src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/sinekoGraphs.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Instagram Data Analytics</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
         </div>
         <div class="col-4">
           <div class="card">
-            <img class="card-img-top" src="static/spider.jpg" alt="Card image cap">
+            <img class="card-img-top" src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/spider.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Web Crawlers</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
         </div>
         <div class="col-4">
           <div class="card">
-            <img class="card-img-top" src="static/cs113.jpg" alt="Card image cap">
+            <img class="card-img-top" src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/cs113.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Group Project Designs</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div> <!-- row -->
+      <div class="row" style="margin-top: 35px;">
+        <div class="col-4">
+          <div class="card">
+            <img class="card-img-top" src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/HashTagMap.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Hashtag Sentiment Analysis</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
           </div>
         </div>
