@@ -106,9 +106,10 @@
 
   .card-title{
     font-size: 22px;
+    text-align: center;
   }
 
-  .col-lg-4{
+  .col-lg-6{
     margin-bottom: 45px;
   }
 
@@ -226,7 +227,7 @@
       {% for row in cardData %}
       <div class="row">
         {% for card in row %}
-        <div class="col-lg-4">
+        <div class="col-lg-6">
           <a href={{ card['href'] }}>
             <div class="card">
               <img class="card-img-top" src={{ card['image_url'] }} alt="Card image cap">
@@ -256,18 +257,18 @@
 </body>
 
 <script>
-
+// Does the typing animation for the heading
+// Clears it so that people who don't use JS can still see it
 document.querySelector("#introText").innerHTML = "";
 var typed = new Typed("#introText", {
-  // Waits 1000ms after typing "First"
   strings: ["Hi, I'm Zach. ^1000 I love artificial intelligence, data science, and computer science. ^2500", "Look below to learn more about me and see some of my projects!"],
   typeSpeed: 20,
   backSpeed: 10
 });
 
+// Does the console typing animation
 document.querySelector("#consoleText").innerHTML = "";
 var typedInConsoleBefore = false;
-
 function typeInConsole(){
   if (typedInConsoleBefore == false){
     typedInConsoleBefore = true;
@@ -298,7 +299,7 @@ function typeInConsole(){
   }
 };
  
-
+// Only activate the console typing animation when the user sees the console
 var element = $('#consoleHeader');
 $(window).scroll(function(){
     var docViewTop = $(window).scrollTop();
@@ -312,10 +313,8 @@ $(window).scroll(function(){
     }
 });
 
-
+// Emeds the pdf into the modal
 PDFObject.embed("https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/resume.pdf", "#pdfContainer");
-
-
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {

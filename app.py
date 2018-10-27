@@ -10,7 +10,7 @@ sslify = SSLify(app)
 
 @app.route('/')
 def home():
-    with open("cardText.json") as f:
+    with open("cardText2.json") as f:
         cardData = json.loads(f.read())
     return render_template('index.html', cardData=cardData)
 
