@@ -4,7 +4,7 @@
 			"href" : "/blog/gm_mlab/",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/gm_mlab.jpg",
 			"title" : "Customer Complaint Analysis",
-			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content.",
+			"description" : " Won second in GM's Machine Learning hackathon. Created a custom word embedding model which mapped customer complaints to subareas. Then mapped each subarea to the engineering defect which was most likely to have caused it the complaints within that subarea.",
 			"tags" : [
 				"Competition",
 				"Machine Learning",
@@ -17,7 +17,7 @@
 			"href" : "/blog/followminer/",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/followminer.jpg",
 			"title" : "Instagram Automation Service",
-			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content.",
+			"description" : "Chrome extension which allows for simple bot integration to a web browser. Supplies automated user interaction and progress tracking. Currently over 100 users.",
 			"tags" : [
 				"Full Stack",
 				"Front End",
@@ -32,7 +32,7 @@
 			"href" : "/blog/blackjack/",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/blackJack.jpg",
 			"title" : "Reinforcement Learning",
-			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content.",
+			"description" : "Different Reinforcement Learning algorithms from David Silver's lectures at University College London applied to OpenAI's gym and other games.",
 			"tags" : [
 				"Artificial Intelligence", 
 				"Game Theory"
@@ -42,11 +42,12 @@
 			"href" : "/blog/expectimax/",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/expectimax.png",
 			"title" : "Expectimax Game AI",
-			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content.",
+			"description" : "Berkeley competition for best AI to solve a complicated game with up to ten dice. Implemented expectimax using dynamic programming and probability theory. Winning fourth out of six hundred.",
 			"tags" : [
 				"Game Theory", 
 				"Competition",
-				"Artificial Intelligence"
+				"Artificial Intelligence",
+				"Dynamic Programming"
 			]
 		}
 	],
@@ -55,7 +56,7 @@
 			"href" : "/blog/instagram_spider/",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/spider.jpg",
 			"title" : "Web Crawlers",
-			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content.",
+			"description" : "Much of the work in data science is data acquisition and cleaning. Created a multitude of spiders using Python requests and scrapy to collect labeled data and pipeline it databases for machine learning and data science.",
 			"tags" : [
 				"Data Mining",
 				"Databases", 
@@ -66,11 +67,11 @@
 			"href" : "/blog/113projects/",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/scrum.jpg",
 			"title" : "Group Project Designs",
-			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content.",
+			"description" : "Created group projects in MiraCosta college's Data Structures and Algorithms class. Served as SCRUM master on the projects to teach students SCRUM, linked lists, MVC, Git, UML and JUnit testing.",
 			"tags" : [
-				"Internship", 
-				"Community Development", 
-				"Sotware Development"
+				"Internship",
+				"Sotware Development",
+				"Project Management"
 			]
 		}
 	],
@@ -79,7 +80,7 @@
 			"href" : "/blog/hashtagMap/",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/HashTagMap.jpg",
 			"title" : "Hashtag Sentiment Analysis",
-			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content.",
+			"description" : "Using word2vec, TSNE and KNN, created a model which takes a hashtag and outputs a more popular related hashtag which caters to a larger audience, optimizing usage.",
 			"tags" : [
 				"Natural Language Processing", 
 				"Data Science", 
@@ -90,7 +91,7 @@
 			"href" : "/blog/sineko/",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/sinekoGraphs.jpg",
 			"title" : "Instagram Data Analytics",
-			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content.",
+			"description" : "A service which, when given an Instagram username will fetch the user's data and using several machine learning models and data analytics, outputs improvements the user can make as well as the percent improvement to be expected.",
 			"tags" : [
 				"Data Science", 
 				"Machine Learning",
