@@ -32,7 +32,7 @@
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/img_parallax4.jpg');
 
     /* Set a specific height */ 
-    height: 100%;
+    height: 900px;
     width: 100%;
 
     /* Create the parallax scrolling effect */
@@ -41,9 +41,9 @@
     background-repeat: no-repeat;
     background-size: cover;
 
-    position: relative;
-
-    padding-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   #thirdParallax{
@@ -100,25 +100,21 @@
   }
 
   #console{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    height: 80%;
+    height: 773px;
+    width: 820px;
   }
 
   #consoleHeader{
     background-color: #ccc;
     height: 23px;
-    width: 100%;
+    width: 820px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
   }
 
   #consoleBody{
-    height: calc(100% - 20px);
-    width: 100%;
+    height: 750px;
+    width: 820px;
     background-color: #272822;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -240,19 +236,19 @@ function typeInConsole(){
     var typed = new Typed("#consoleText", {
       // Waits 1000ms after typing "First"
       strings: ["\
-      `>>>` ^500 Zach.location ^500 <br> \
+      `>>>` ^500 Zach.location ^100 <br> \
       `'Berkeley, CA'<br><br>>>>`\
       \
-      Zach.education ^500 <br> \
+      Zach.education ^100 <br> \
       `{'school' : 'Univeristy of California, Berkeley', 'gpa' : 3.7, 'expectedGraduation' : 'May 2020', 'major' : 'Computer Science'}<br><br>>>>` ^250\
       \
-      Zach.interests ^500 <br> \
+      Zach.interests ^100 <br> \
       `['Artificial Intelligence', 'Data Science', 'Efficient Algorithms', 'Weightlifting', 'Triathalons', 'Entrepreneurship']<br><br>>>>` ^250\
       \
-      Zach.email ^500 <br> \
+      Zach.email ^100 <br> \
       `'zachchao@berkeley.edu'<br><br>>>>` ^250\
       \
-      Zach.resume ^500 <br> \
+      Zach.resume ^100 <br> \
       `<a href='resume.pdf'>'resume.pdf'</a><br><br>>>>` ^250\
       \
       "],
