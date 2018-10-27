@@ -2,6 +2,7 @@
 <html>
 <head>
   {% include 'header.html' %}
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
 </head>
 <body>
 
@@ -25,15 +26,6 @@
     background-size: cover;
 
     position: relative;
-  }
-
-  #firstParallax:before{
-    position:fixed;
-    width:100%;
-    height:100%;
-    left:0;
-    top:0;
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/img_parallax2.jpg');
   }
 
   #secondParallax{
@@ -67,9 +59,8 @@
     font-family: 'Ubuntu', sans-serif;
     font-size: 37px;
     color: white;
-    text-align: center;
+    text-align: left;
     font-weight: 575;
-    text-align: center;
   }
 
   .card-img-top{
@@ -89,13 +80,31 @@
   .col-lg-4{
     margin-bottom: 45px;
   }
+
+  .typed-cursor {
+    opacity: 1;
+    animation: blink .7s infinite;
+  }
+
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
 </style>
 
 <div id="main-container">
   <div id="firstParallax">
     {% include 'navbar.html' %}
     <div id="introContainer">
-      <h2 class="headingText">Hi, I'm Zach. I love artificial intelligence, algorithms and learning.</h2>
+      <h2 id="introText" class="headingText">Hi, I'm Zach. I love artificial intelligence, algorithms and learning.<p class="typed-cursor">|</p></h2>
     </div>
   </div>
 
@@ -104,101 +113,24 @@
       <div class="row" style="margin-bottom: 25px;">
         <h2 class="headingText" style="width: 100%;">Projects</h2>
       </div>
+      <!-- Double for loop through json object to make the cards -->
+      {% for row in cardData %}
       <div class="row">
+        {% for card in row %}
         <div class="col-lg-4">
-          <a href="/blog/gm_mlab/">
+          <a href={{ card['href'] }}>
             <div class="card">
-              <img class="card-img-top" src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/gm_mlab.jpg" alt="Card image cap">
+              <img class="card-img-top" src={{ card['image_url'] }} alt="Card image cap">
               <div class="card-body">
-                <h5 class="card-title">Customer Complaint Analysis</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h5 class="card-title">{{ card['title'] }}</h5>
+                <p class="card-text">{{ card['description'] }}</p>
               </div>
             </div>
           </a>
-        </div>
-        <div class="col-lg-4">
-          <a href="/blog/followminer/">
-            <div class="card">
-              <img class="card-img-top" src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/followminer.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Instagram Automation Service</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4">
-          <a href="/blog/followminer/">
-            <div class="card">
-              <img class="card-img-top" src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/blackJack.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Reinforcement Learning</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div> <!-- row -->
-      <div class="row">
-        <div class="col-lg-4">
-          <a href="/blog/followminer/">
-            <div class="card">
-              <img class="card-img-top" src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/expectimax.png" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Expectimax Game AI</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4">
-          <a href="/blog/followminer/">
-            <div class="card">
-              <img class="card-img-top" src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/spider.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Web Crawlers</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4">
-          <a href="/blog/followminer/">
-            <div class="card">
-              <img class="card-img-top" src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/scrum.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Group Project Designs</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div> <!-- row -->
-      <div class="row">
-        <div class="col-lg-4">
-          <a href="/blog/followminer/">
-            <div class="card">
-              <img class="card-img-top" src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/HashTagMap.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Hashtag Sentiment Analysis</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4">
-          <a href="/blog/followminer/">
-            <div class="card">
-              <img class="card-img-top" src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/sinekoGraphs.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Instagram Data Analytics</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div> <!-- row -->
-      
+        </div> 
+        {% endfor %}
+      </div>
+      {% endfor %}
     </div>
   </div>
 
@@ -207,6 +139,17 @@
 
 </body>
 
-<!-- Included scripts -->
-{% include 'active-nav.html' %}
+<script>
+
+document.querySelector("#introText").innerHTML = "";
+var typed = new Typed("#introText", {
+  // Waits 1000ms after typing "First"
+  strings: ["Hi, I'm Zach. ^1000 I love artificial intelligence, data science, and computer science. ^2500", "Look below for some of my projects!"],
+  typeSpeed: 20,
+  backSpeed: 10,
+  showCursor: true
+});
+
+</script>
 </html>
+

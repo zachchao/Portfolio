@@ -1,4 +1,4 @@
-import os
+import json
 
 from flask import Flask
 from flask import render_template, request
@@ -10,7 +10,9 @@ sslify = SSLify(app)
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    with open("cardText.json") as f:
+        cardData = json.loads(f.read())
+    return render_template('index.html', cardData=cardData)
 
 @app.route('/robots.txt')
 def robots():
