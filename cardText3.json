@@ -4,19 +4,22 @@
 			"href" : "/blog/gm_mlab/",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/gm_mlab.jpg",
 			"title" : "Customer Complaint Analysis",
-			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content."
+			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content.",
+			"tags" : ["test", "test", "woops"]
 		},
 		{
 			"href" : "/blog/followminer/",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/followminer.jpg",
 			"title" : "Instagram Automation Service",
-			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content."
+			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content.",
+			"tags" : ["test", "test", "woops"]
 		},
 		{
 			"href" : "/blog/blackjack/",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/blackJack.jpg",
 			"title" : "Reinforcement Learning",
-			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content."
+			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content.",
+			"tags" : ["test", "test", "woops"]
 		}
 	],
 	[
@@ -24,19 +27,22 @@
 			"href" : "/blog/expectimax/",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/expectimax.png",
 			"title" : "Expectimax Game AI",
-			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content."
+			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content.",
+			"tags" : ["test", "test", "woops"]
 		},
 		{
 			"href" : "/blog/instagram_spider/",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/spider.jpg",
 			"title" : "Web Crawlers",
-			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content."
+			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content.",
+			"tags" : ["test", "test", "woops"]
 		},
 		{
 			"href" : "/blog/113projects/",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/scrum.jpg",
 			"title" : "Group Project Designs",
-			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content."
+			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content.",
+			"tags" : ["test", "test", "woops"]
 		}
 	],
 	[
@@ -44,13 +50,15 @@
 			"href" : "/blog/hashtagMap/",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/HashTagMap.jpg",
 			"title" : "Hashtag Sentiment Analysis",
-			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content."
+			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content.",
+			"tags" : ["test", "test", "woops"]
 		},
 		{
 			"href" : "/blog/sineko/",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/sinekoGraphs.jpg",
 			"title" : "Instagram Data Analytics",
-			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content."
+			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content.",
+			"tags" : ["test", "test", "woops"]
 		}
 	]
 ]

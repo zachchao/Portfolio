@@ -109,6 +109,24 @@
     text-align: center;
   }
 
+  .card-tag{
+    color: #BDC3C7;
+    background-color: #36393E;
+    padding: .25em;
+    display: inline-block;
+    border-radius: .25em;
+    margin: 2px;
+    margin-top: 6px;
+  }
+
+  .card-tag:hover{
+    transform: scale(1.1);
+  }
+
+  .card-tag-container{
+    text-align: center;
+  }
+
   .col-lg-6{
     margin-bottom: 45px;
   }
@@ -234,6 +252,11 @@
               <div class="card-body">
                 <h5 class="card-title">{{ card['title'] }}</h5>
                 <p class="card-text">{{ card['description'] }}</p>
+                <div class="card-tag-container">
+                  {% for tag in card['tags'] %}
+                  <span class="card-tag">{{tag}}</span>
+                  {% endfor %}
+                </div>
               </div>
             </div>
           </a>

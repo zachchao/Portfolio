@@ -4,13 +4,27 @@
 			"href" : "/blog/gm_mlab/",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/gm_mlab.jpg",
 			"title" : "Customer Complaint Analysis",
-			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content."
+			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content.",
+			"tags" : [
+				"Competition",
+				"Machine Learning",
+				"Data Mining",
+				"Natural Language Processing",
+				"Teamwork"
+			]
 		},
 		{
 			"href" : "/blog/followminer/",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/followminer.jpg",
 			"title" : "Instagram Automation Service",
-			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content."
+			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content.",
+			"tags" : [
+				"Full Stack",
+				"Front End",
+				"Back End",
+				"Application", 
+				"Software Development"
+			]
 		}
 	],
 	[
@@ -18,13 +32,22 @@
 			"href" : "/blog/blackjack/",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/blackJack.jpg",
 			"title" : "Reinforcement Learning",
-			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content."
+			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content.",
+			"tags" : [
+				"Artificial Intelligence", 
+				"Game Theory"
+			]
 		},
 		{
 			"href" : "/blog/expectimax/",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/expectimax.png",
 			"title" : "Expectimax Game AI",
-			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content."
+			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content.",
+			"tags" : [
+				"Game Theory", 
+				"Competition",
+				"Artificial Intelligence"
+			]
 		}
 	],
 	[
@@ -32,13 +55,23 @@
 			"href" : "/blog/instagram_spider/",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/spider.jpg",
 			"title" : "Web Crawlers",
-			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content."
+			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content.",
+			"tags" : [
+				"Data Mining",
+				"Databases", 
+				"Competition"
+			]
 		},
 		{
 			"href" : "/blog/113projects/",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/scrum.jpg",
 			"title" : "Group Project Designs",
-			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content."
+			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content.",
+			"tags" : [
+				"Internship", 
+				"Community Development", 
+				"Sotware Development"
+			]
 		}
 	],
 	[
@@ -46,13 +79,23 @@
 			"href" : "/blog/hashtagMap/",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/HashTagMap.jpg",
 			"title" : "Hashtag Sentiment Analysis",
-			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content."
+			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content.",
+			"tags" : [
+				"Natural Language Processing", 
+				"Data Science", 
+				"Machine Learning"
+			]
 		},
 		{
 			"href" : "/blog/sineko/",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/sinekoGraphs.jpg",
 			"title" : "Instagram Data Analytics",
-			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content."
+			"description" : "Some quick example text to build on the card title and make up the bulk of the card's content.",
+			"tags" : [
+				"Data Science", 
+				"Machine Learning",
+				"Web Application"
+			]
 		}
 	]
 ]
