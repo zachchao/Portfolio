@@ -2,7 +2,6 @@
 <html>
 <head>
   {% include 'header.html' %}
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
 </head>
 <body>
 
@@ -30,7 +29,26 @@
 
   #secondParallax{
     /* The image used */
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/img_parallax3.jpg');
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('static/rawpixel-589084-unsplash.jpg');
+
+    /* Set a specific height */ 
+    height: 100%;
+    width: 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: relative;
+
+    padding-top: 60px;
+  }
+  
+  #thirdParallax{
+    /* The image used */
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('static/ramon-salinero-271002-unsplash.jpg');
 
     /* Set a specific height */
 
@@ -81,21 +99,57 @@
     margin-bottom: 45px;
   }
 
-  .typed-cursor {
-    opacity: 1;
-    animation: blink .7s infinite;
+  #console{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
   }
 
-  @keyframes blink {
-    0% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+  #consoleHeader{
+    background-color: #ccc;
+    height: 23px;
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  #consoleBody{
+    height: calc(100% - 20px);
+    width: 100%;
+    background-color: #272822;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 10px;
+    opacity: 0.97;
+  }
+
+  #consoleText{
+    color: #f0f0f0;
+    font-weight: 500;
+    font-family: "Consolas", "Courier New", "Courier";
+    font-size: 1.45em;
+    text-shadow: #000 0px 1px 0px;
+    line-height: 1.40em;
+    display: block;
+  }
+
+  a{
+    color: #3a92c8
+  }
+
+  .typed-cursor{
+    color: white;
+  }
+
+  .typed-cursor--blink{
+    color: white;
+  }
+
+  #introContainer>.typed-cursor, #introContainer>.typed-cursor--blink{
+    font-size: 37px;
   }
 
 </style>
@@ -104,11 +158,40 @@
   <div id="firstParallax">
     {% include 'navbar.html' %}
     <div id="introContainer">
-      <h2 id="introText" class="headingText">Hi, I'm Zach. I love artificial intelligence, algorithms and learning.<p class="typed-cursor">|</p></h2>
+      <span id="introText" class="headingText">Hi, I'm Zach. I love artificial intelligence, data science, and computer science. Look below to learn more about me and see my projects!</span>
     </div>
   </div>
 
   <div id="secondParallax">
+    <div id="console">
+      <div id="consoleHeader">
+
+      </div>
+      <div id="consoleBody">
+        <span id="consoleText">
+          >>> Zach.location<br>
+          'Berkeley, CA'<br>
+          <br>
+          >>> Zach.education<br>
+          {'school' : 'Univeristy of California, Berkeley', 'gpa' : 3.7, 'expectedGraduation' : 'May 2020', "major" : "Computer Science"}<br> 
+          <br>
+          >>> Zach.interests<br>
+          '["Artificial Intelligence", "Data Science", "Efficient Algorithms", "Weightlifting", "Triathalons", "Entrepreneurship"]'
+          <br>
+          <br>
+          >>> Zach.email<br>
+          'zachchao@berkeley.edu'<br>
+          <br>
+          >>> Zach.resume<br>
+          <a href="resume.pdf">'resume.pdf'</a><br>
+          <br>
+          >>>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div id="thirdParallax">
     <div class="container">
       <div class="row" style="margin-bottom: 25px;">
         <h2 class="headingText" style="width: 100%;">Projects</h2>
@@ -140,14 +223,59 @@
 </body>
 
 <script>
-
 document.querySelector("#introText").innerHTML = "";
 var typed = new Typed("#introText", {
   // Waits 1000ms after typing "First"
-  strings: ["Hi, I'm Zach. ^1000 I love artificial intelligence, data science, and computer science. ^2500", "Look below for some of my projects!"],
+  strings: ["Hi, I'm Zach. ^1000 I love artificial intelligence, data science, and computer science. ^2500", "Look below to learn more about me and see some of my projects!"],
   typeSpeed: 20,
-  backSpeed: 10,
-  showCursor: true
+  backSpeed: 10
+});
+
+document.querySelector("#consoleText").innerHTML = "";
+var typedInConsoleBefore = false;
+
+function typeInConsole(){
+  if (typedInConsoleBefore == false){
+    typedInConsoleBefore = true;
+    var typed = new Typed("#consoleText", {
+      // Waits 1000ms after typing "First"
+      strings: ["\
+      `>>>` ^500 Zach.location ^500 <br> \
+      `'Berkeley, CA'<br><br>>>>`\
+      \
+      Zach.education ^500 <br> \
+      `{'school' : 'Univeristy of California, Berkeley', 'gpa' : 3.7, 'expectedGraduation' : 'May 2020', 'major' : 'Computer Science'}<br><br>>>>` ^250\
+      \
+      Zach.interests ^500 <br> \
+      `['Artificial Intelligence', 'Data Science', 'Efficient Algorithms', 'Weightlifting', 'Triathalons', 'Entrepreneurship']<br><br>>>>` ^250\
+      \
+      Zach.email ^500 <br> \
+      `'zachchao@berkeley.edu'<br><br>>>>` ^250\
+      \
+      Zach.resume ^500 <br> \
+      `<a href='resume.pdf'>'resume.pdf'</a><br><br>>>>` ^250\
+      \
+      "],
+      typeSpeed: 20,
+      backSpeed: 10,
+      loop: false,
+      cursorChar: '_',
+    });
+  }
+};
+ 
+
+var element = $('#consoleHeader');
+$(window).scroll(function(){
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+
+    var elemTop = $(element).offset().top;
+    var elemBottom = elemTop + $(element).height();
+
+    if ((elemBottom <= docViewBottom) && (elemTop >= docViewTop)) {
+        typeInConsole();
+    }
 });
 
 </script>
