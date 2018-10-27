@@ -14,6 +14,10 @@ def home():
         cardData = json.loads(f.read())
     return render_template('index.html', cardData=cardData)
 
+@app.route('/test')
+def test():
+    return render_template('test.html')
+
 @app.route('/robots.txt')
 def robots():
     res = app.make_response('User-agent: *\nAllow: /')

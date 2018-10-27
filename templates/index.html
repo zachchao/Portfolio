@@ -148,6 +148,19 @@
     font-size: 37px;
   }
 
+  #pdfModal{
+    width: 80%;
+    height: 90%;
+    margin: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%
+  }
+
+  .pdfobject-container { 
+    height: 100%;
+    border: 1rem solid rgba(0,0,0,.1); 
+  }
+  
 </style>
 
 <div id="main-container">
@@ -179,7 +192,7 @@
           'zachchao@berkeley.edu'<br>
           <br>
           >>> Zach.resume<br>
-          <a href="resume.pdf">'resume.pdf'</a><br>
+          <a href='#pdfModal' data-toggle='modal'> resume.pdf</a><br>
           <br>
           >>>
         </span>
@@ -212,13 +225,21 @@
       {% endfor %}
     </div>
   </div>
-
   {% include 'footer.html' %}
 </div><!--#main-container -->
+
+<!-- The Modal -->
+<div id="pdfModal" class="modal">
+  <!-- Modal content -->
+  <div class="modalContent" style="background-color: white; height: 100%;">
+    <div id="pdfContainer"></div>
+  </div>
+</div>
 
 </body>
 
 <script>
+
 document.querySelector("#introText").innerHTML = "";
 var typed = new Typed("#introText", {
   // Waits 1000ms after typing "First"
@@ -249,7 +270,7 @@ function typeInConsole(){
       `'zachchao@berkeley.edu'<br><br>>>>` ^250\
       \
       Zach.resume ^100 <br> \
-      `<a href='resume.pdf'>'resume.pdf'</a><br><br>>>>` ^250\
+      `<a href='#pdfModal' data-toggle='modal'> resume.pdf</a><br><br>>>>` ^250\
       \
       "],
       typeSpeed: 20,
@@ -274,6 +295,20 @@ $(window).scroll(function(){
     }
 });
 
+
+PDFObject.embed("https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/resume.pdf", "#pdfContainer");
+
+
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  // Get the modal
+  var modal = document.getElementById('pdfModal');
+  var backdrop = document.querySelector('.modal-backdrop');
+  if (event.target == backdrop) {
+    $('#pdfModal').modal('toggle');
+  }
+}
 </script>
 </html>
 
