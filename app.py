@@ -2,11 +2,9 @@ import json
 
 from flask import Flask
 from flask import render_template, request
-from flask_sslify import SSLify
 
 
 app = Flask(__name__)
-sslify = SSLify(app)
 
 @app.route('/')
 def home():
