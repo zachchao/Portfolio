@@ -22,9 +22,13 @@ def robots():
     res.mimetype = 'text/plain'
     return res
 
+@app.route('/blog')
+def blog():
+    return render_template('blog/index.html')
+    
 @app.route('/blog/calhacks')
 def calhacks():
-    return render_template('blog_calhacks.html')
+    return render_template('blog/calhacks.html')
 
 @app.errorhandler(404)
 def page_not_found(e):

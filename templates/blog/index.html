@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% include 'header.html' %}
+</head>
+<body>
+
+<style> 
+  {% include 'css/staple.css' %}
+  {% include 'css/blog.css' %}
+  #firstParallax{
+    /* The image used */
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/img_parallax4.png');
+
+    /* Set a specific height */
+    height: 10rem;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: relative;
+  }
+
+  li{
+  	margin-bottom: 15px;
+  	font-size: 22px;
+  }
+</style>
+
+<div id="main-container">
+	<div id="firstParallax">
+    {% include 'navbar.html' %}
+    <h1 class="blogHeading">Archive</h1>
+  </div>
+
+	<div id="blog-container">
+		<h2 style="margin-bottom: 20px;">Blog Posts</h2>
+		<ul>
+			<li>
+				11 Nov 2018 >> <a href="/blog/calhacks">Augmented Reality Visual Assistance Tool</a>
+			</li>
+			<li>
+				Coming Soon >> <a href="#">Customer Complaint Analysis</a>
+			</li>
+			<li>
+				Coming Soon >> <a href="#">Instagram Automation Service</a>
+			</li>
+			<li>
+				Coming Soon >> <a href="#">Reinforcement Learning</a>
+			</li>
+			<li>
+				Coming Soon >> <a href="#">Expectimax Game AI</a>
+			</li>
+			<li>
+				Coming Soon >> <a href="#">Group Project Designs</a>
+			</li>
+			<li>
+				Coming Soon >> <a href="#">Hashtag Sentiment Analysis</a>
+			</li>
+			<li>
+				Coming Soon >> <a href="#">Instagram Data Analytics</a>
+			</li>
+		</ul>
+
+		<h2 style="margin-bottom: 20px;">Tutorials</h2>
+		<ul>
+			<li>
+				Coming Soon >> <a href="#">Web Crawlers</a>
+			</li>
+		</ul>
+	</div>
+
+  {% include 'footer.html' %}
+</div><!--#main-container -->
+{% include 'resumeModal.html' %}
+
+</body>
+</html>
+

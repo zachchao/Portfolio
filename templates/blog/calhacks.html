@@ -6,23 +6,8 @@
 <body>
 
 <style> 
-  {% include 'staple.css' %}
-
-  /* .navbar{
-  	background-color: #36393E !important;
-  } */
-
-  #blog-container{
-  	max-width: 900px;
-  	margin: auto;
-  	padding-top: 40px;
-  	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif;
-  }
-
-  #post-date{
-  	color: #9a9a9a;
-  }
-
+  {% include 'css/staple.css' %}
+  {% include 'css/blog.css' %}
   #firstParallax{
     /* The image used */
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/calHacks2.png');
@@ -38,30 +23,13 @@
 
     position: relative;
   }
-
-  .blogHeading{
-  	color: white;
-  	text-align: center;
-  }
-
-  h2{
-  	font-size: 40px;
-  }
-
-  p{
-  	font-size: 20px;
-  }
-
-  .blog-img{
-  	width: 100%;
-  }
 </style>
 
 <div id="main-container">
 	<div id="firstParallax">
     {% include 'navbar.html' %}
     <h1 class="blogHeading">Memory Palace</h1>
-		<p class="blogHeading" style="opacity: 0.8;">13 Nov 2018</p>
+		<p class="blogDate">13 Nov 2018</p>
   </div>
 
 	<div id="blog-container">
@@ -97,8 +65,8 @@
 	</div>
 
   {% include 'footer.html' %}
+  {% include 'resumeModal.html' %}
 </div><!--#main-container -->
-
 </body>
 </html>
 

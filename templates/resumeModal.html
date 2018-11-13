@@ -1,0 +1,22 @@
+<!-- The Modal -->
+<div id="pdfModal" class="modal">
+  <!-- Modal content -->
+  <div class="modalContent" style="background-color: white; height: 100%; max-width: 720px; margin: auto; margin-top: 30px;">
+    <div id="pdfContainer" style="height: 100%; max-width: 720px;"></div>
+  </div>
+</div>
+
+<script>
+// Emeds the pdf into the modal
+PDFObject.embed("https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/resume.pdf", "#pdfContainer");
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  // Get the modal
+  var modal = document.getElementById('pdfModal');
+  var backdrop = document.querySelector('.modal-backdrop');
+  if (event.target == backdrop) {
+    $('#pdfModal').modal('toggle');
+  }
+}
+</script>

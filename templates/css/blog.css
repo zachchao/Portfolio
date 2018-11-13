@@ -1,0 +1,34 @@
+#blog-container{
+  max-width: 900px;
+  margin: auto;
+  padding-top: 40px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif;
+}
+
+.blogHeading{
+	color: white;
+	text-align: center;
+}
+
+.blogDate{
+  color: white;
+  text-align: center;
+  opacity: 0.8;
+}
+
+h2{
+	font-size: 40px;
+}
+
+p{
+	font-size: 20px;
+}
+
+.blog-img{
+	width: 100%;
+}
+
+.navbar{
+    max-width: 940px;
+    margin: auto;
+  }
