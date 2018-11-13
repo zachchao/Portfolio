@@ -1,7 +1,7 @@
 [
 	[
 		{
-			"href" : "/blog/cal_hacks/",
+			"href" : "/blog/calhacks",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/calHacks2.png",
 			"title" : "Augmented Reality Visual Assistance Tool",
 			"description" : "Won first place in augmented reality section at world's largest collegiate hackathon, Cal Hacks, 2300+ hackers. Created a heads up visual assistance tool for the low vision and cognitively impaired. Implemented a MASK R-CNN trained on the imagenet and MS COCO data sets with tensorflow, Google's speech to text API for voice commands and OpenCV and Pillow for other image features.",
@@ -12,7 +12,7 @@
 			]
 		},
 		{
-			"href" : "/blog/gm_mlab/",
+			"href" : "",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/gm_mlab.jpg",
 			"title" : "Customer Complaint Analysis",
 			"description" : "Won second in GM's Machine Learning hackathon. Created a custom word embedding model which mapped customer complaints to subareas. Then mapped each subarea to the engineering defect which was most likely to have caused it the complaints within that subarea.",
@@ -27,7 +27,7 @@
 	],
 	[
 		{
-			"href" : "/blog/followminer/",
+			"href" : "",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/followminer.jpg",
 			"title" : "Instagram Automation Service",
 			"description" : "Chrome extension which allows for simple bot integration to a web browser. Supplies automated user interaction and progress tracking. Currently over 100 users.",
@@ -40,7 +40,7 @@
 			]
 		},
 		{
-			"href" : "/blog/blackjack/",
+			"href" : "",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/blackJack.jpg",
 			"title" : "Reinforcement Learning",
 			"description" : "Different Reinforcement Learning algorithms from David Silver's lectures at University College London applied to OpenAI's gym and other games.",
@@ -52,7 +52,7 @@
 	],
 	[
 		{
-			"href" : "/blog/expectimax/",
+			"href" : "",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/expectimax.png",
 			"title" : "Expectimax Game AI",
 			"description" : "Won fourth out of six hundred in Berkeley competition for best AI to solve a complicated game with up to ten dice. Implemented expectimax using dynamic programming and probability theory. Winning fourth out of six hundred.",
@@ -64,7 +64,7 @@
 			]
 		},
 		{
-			"href" : "/blog/instagram_spider/",
+			"href" : "",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/spider.jpg",
 			"title" : "Web Crawlers",
 			"description" : "Much of the work in data science is data acquisition and cleaning. Created a multitude of spiders using Python requests and scrapy to collect labeled data and pipeline it databases for machine learning and data science.",
@@ -77,7 +77,7 @@
 	],
 	[
 		{
-			"href" : "/blog/113projects/",
+			"href" : "",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/scrum.jpg",
 			"title" : "Group Project Designs",
 			"description" : "Created group projects in MiraCosta college's Data Structures and Algorithms class. Served as SCRUM master on the projects to teach students SCRUM, linked lists, MVC, Git, UML and JUnit testing.",
@@ -88,7 +88,7 @@
 			]
 		},
 		{
-			"href" : "/blog/hashtagMap/",
+			"href" : "",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/HashTagMap.jpg",
 			"title" : "Hashtag Sentiment Analysis",
 			"description" : "Using word2vec, TSNE and KNN, created a model which takes a hashtag and outputs a more popular related hashtag which caters to a larger audience, optimizing usage.",
@@ -101,7 +101,7 @@
 	],
 	[
 		{
-			"href" : "/blog/sineko/",
+			"href" : "",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/sinekoGraphs.jpg",
 			"title" : "Instagram Data Analytics",
 			"description" : "A service which, when given an Instagram username will fetch the user's data and using several machine learning models and data analytics, outputs improvements the user can make as well as the percent improvement to be expected.",

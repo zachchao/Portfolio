@@ -196,7 +196,26 @@
     height: 100%;
     border: 1rem solid rgba(0,0,0,.1); 
   }
-  
+
+  .corner-ribbon{
+    width: 200px;
+    background: #e43;
+    position: absolute;
+    top: 25px;
+    left: -50px;
+    text-align: center;
+    line-height: 50px;
+    letter-spacing: 1px;
+    color: #f0f0f0;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    background: #e43;
+    box-shadow: 0 0 3px rgba(0,0,0,.3); 
+    top: 25px;
+    left: -50px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
 </style>
 
 <div id="main-container">
@@ -246,8 +265,13 @@
       <div class="row">
         {% for card in row %}
         <div class="col-lg-6">
-          <!-- <a href={{ card['href'] }}> -->
+          {% if card['href'] != "" %}
+          <a href={{ card['href'] }}>
+          {% endif %}
             <div class="card">
+              {% if card['href'] != "" %}
+              <div class="corner-ribbon">Click Me!</div>
+              {% endif %}
               <img class="card-img-top" src={{ card['image_url'] }} alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">{{ card['title'] }}</h5>
@@ -259,7 +283,9 @@
                 {% endfor %}
               </div>
             </div>
-          <!-- </a> -->
+          {% if card['href'] != "" %}
+          </a>
+          {% endif %}
         </div> 
         {% endfor %}
       </div>

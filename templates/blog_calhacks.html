@@ -13,7 +13,7 @@
   } */
 
   #blog-container{
-  	max-width: 720px;
+  	max-width: 900px;
   	margin: auto;
   	padding-top: 40px;
   	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif;
@@ -66,8 +66,8 @@
 
 	<div id="blog-container">
 		<h2>Introduction</h2>
+		<img src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/calHacks2.png" style="width: 60%; float: right;">
 		<p>This blog post is about what I did at Cal Hacks. It is the world's largest collegiate hackathon with over 2300 hackers and over 400k in funding. This year's sponsors were big names like Microsoft, Tron, PayPal, Blackrock, Epson, Ford, Cisco, etc. If you'd like to find out more click <a href="www.calhacks.io">here</a>. I went with Siddhartha Datta, who I had met at the GM hackathon I did last month, Katherine Peng, who I've known for a while, and her friend, Victor.</p>
-		<img class="blog-img" src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/calHacks2.png">
 		<p>Before the event there were several "Pre-Hackathon" events in which sponsors would come together and present their challenges as well as prizes. So going in we had interests in Blackrock's stock API, Epson's augmented reality glasses, Eluvio's fabric API and OmniSci and Uber's data sets. But whatever we chose, we knew we wanted to do something with deep learning as that is where much of Siddhartha and my interests lie.</p>
 		<p>Once we got a hold of Epson's augmented reality glasses we began getting a lot of cool ideas ranging from night vision with deep learning to real time style transfer with a convolutional neural net. We took quite a while to really decide, we got there around 6:30pm and around 2:30am we finally decided on Memory Palace.</p>
 		
@@ -82,7 +82,9 @@
 		<img class="blog-img" src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/Memory_Palace_Functionality.png">
 		<p>For our object detection model we initially wanted to use Yolo V3 as it's a strong and very commonly used object detection model but ran into quite a few issues with running it on a windows instance as the owner develops it on Linux. So at first we used a Yolo V1 model which was pretrained on the MS Coco dataset. But we quickly realized it was poorly trained and only had around 80 labels which just wouldn't do. As well, it kept thinking Siddhartha and I were bicycles, It was quite confident as well... Maybe it knows something we don't.</p>
 		<img class="blog-img" src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/calHacksBicycle.png">
-		<p>So after a few hours of playing with different models we eventually settled on the MASK R-CNN which had pretty good accuracy and most importantly, ran inference quickly. As we were doing real time inference on the model and wanted to provide at least 30 frames per second we needed a fast and accurate model.<img src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/calHacks3.png" style="align-items: center;"> At the very least it knew that we were people now.</p>
+		<p>So after a few hours of playing with different models we eventually settled on the MASK R-CNN trained on the imagenet data set which had pretty good accuracy and most importantly, ran inference quickly. As we were doing real time inference on the model and wanted to provide at least 30 frames per second we needed a fast and accurate model.</p>
+		<img class="blog-img" src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/calHacks3.png" style="align-items: center;"> 
+		<p>At the very least it knew that we were people now.</p>
 
 		<h2>The voice recognition</h2>
 		<p>Using Google's machine learning API was kind of annoying to set up but thankfully there were engineers from Google at the venue which helped us set up our API keys and get used to the environment. Once it was set up, using the model to run real time inference on the audio was surprisingly easy. I just ran the model and put in keywords to allow for voice commands. When it heard a "remember" or other synonyms it would cut out filler words and identify the key the user wanted to tag then it would send the key and command to the Python 3 server.</p>
