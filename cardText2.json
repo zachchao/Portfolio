@@ -4,7 +4,7 @@
 			"href" : "/blog/cal_hacks/",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/calHacks2.png",
 			"title" : "Augmented Reality Visual Assistance Tool",
-			"description" : "Won first place in augmented reality section at world's largest collegiate hackathon, Cal Hacks, 2300+ hackers. Created a heads up visual assistance tool for the low vision and cognitively impaired. Implemented a MASK R-CNN trained on the imagenet and MS COCO data sets with tensorflow, Google's speech to text API for voice commands and OpenCV and Pillow for other image features",
+			"description" : "Won first place in augmented reality section at world's largest collegiate hackathon, Cal Hacks, 2300+ hackers. Created a heads up visual assistance tool for the low vision and cognitively impaired. Implemented a MASK R-CNN trained on the imagenet and MS COCO data sets with tensorflow, Google's speech to text API for voice commands and OpenCV and Pillow for other image features.",
 			"tags" : [
 				"Competition",
 				"Machine Learning",
@@ -55,7 +55,7 @@
 			"href" : "/blog/expectimax/",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/expectimax.png",
 			"title" : "Expectimax Game AI",
-			"description" : "Berkeley competition for best AI to solve a complicated game with up to ten dice. Implemented expectimax using dynamic programming and probability theory. Winning fourth out of six hundred.",
+			"description" : "Won fourth out of six hundred in Berkeley competition for best AI to solve a complicated game with up to ten dice. Implemented expectimax using dynamic programming and probability theory. Winning fourth out of six hundred.",
 			"tags" : [
 				"Game Theory", 
 				"Competition",

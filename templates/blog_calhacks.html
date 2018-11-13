@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% include 'header.html' %}
+</head>
+<body>
+
+<style> 
+  {% include 'staple.css' %}
+
+  /* .navbar{
+  	background-color: #36393E !important;
+  } */
+
+  #blog-container{
+  	max-width: 720px;
+  	margin: auto;
+  	padding-top: 40px;
+  	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif;
+  }
+
+  #post-date{
+  	color: #9a9a9a;
+  }
+
+  #firstParallax{
+    /* The image used */
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/calHacks2.png');
+
+    /* Set a specific height */
+    height: 12rem;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: relative;
+  }
+
+  .blogHeading{
+  	color: white;
+  	text-align: center;
+  }
+
+  h2{
+  	font-size: 40px;
+  }
+
+  p{
+  	font-size: 20px;
+  }
+
+  .blog-img{
+  	width: 100%;
+  }
+</style>
+
+<div id="main-container">
+	<div id="firstParallax">
+    {% include 'navbar.html' %}
+    <h1 class="blogHeading">Memory Palace</h1>
+		<p class="blogHeading" style="opacity: 0.8;">13 Nov 2018</p>
+  </div>
+
+	<div id="blog-container">
+		<h2>Introduction</h2>
+		<p>This blog post is about what I did at Cal Hacks. It is the world's largest collegiate hackathon with over 2300 hackers and over 400k in funding. This year's sponsors were big names like Microsoft, Tron, PayPal, Blackrock, Epson, Ford, Cisco, etc. If you'd like to find out more click <a href="www.calhacks.io">here</a>. I went with Siddhartha Datta, who I had met at the GM hackathon I did last month, Katherine Peng, who I've known for a while, and her friend, Victor.</p>
+		<img class="blog-img" src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/calHacks2.png">
+		<p>Before the event there were several "Pre-Hackathon" events in which sponsors would come together and present their challenges as well as prizes. So going in we had interests in Blackrock's stock API, Epson's augmented reality glasses, Eluvio's fabric API and OmniSci and Uber's data sets. But whatever we chose, we knew we wanted to do something with deep learning as that is where much of Siddhartha and my interests lie.</p>
+		<p>Once we got a hold of Epson's augmented reality glasses we began getting a lot of cool ideas ranging from night vision with deep learning to real time style transfer with a convolutional neural net. We took quite a while to really decide, we got there around 6:30pm and around 2:30am we finally decided on Memory Palace.</p>
+		
+		<h2>Our Project</h2>
+		<p>As most people don't wear augmented reality glasses around (for now!), our target audience was primarily people with cognitive problems affecting their visuospatial abilities or memory such as Alzheimer's, dementia or Parkinson's disease.</p>
+		<p>Memory Palace is a voice activated android application which can be run in the background of the Moverio augmented reality glasses. Voice commands such as "remember my keys" would log a picture, geotag and a time stamp to the SD disk of the glasses. Then when a user lost the item they could simply say "help me find my keys" and pictures as well as the geotags and timestamps of the user's keys would be displayed. But what if the keys were dropped or not where they were last seen? A second mode could be activated that would gray-scale the rest of the world and the lost item would be highlighted.</p>
+
+		<h2>How it works</h2>
+		<p>How does the back end work on a surface level? First we capture video using the glasses' camera, pass it to a Python 3 server running a TensorFlow session to perform object detection and tag objects. The inference data is then sent back to the glasses to allow for the gray-scale filtering and highlighting of lost objects. We simultaneously run the audio from the microphone to a separate Python 2 server which uses Google's machine learning speech to text model to read user's commands and send them to the Python 3 server to adjust modes, tag objects and interact with the database. I know this is super janky and could have been done a lot better but it's a hackathon, we threw all this together in less than thirty hours without sleep. In my future projects and hackathons I am definitely going to take more time to draw out the work flow and make sure pieces fit together more smoothly.</p>
+
+		<h3>The Object Detection</h3>
+		<img class="blog-img" src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/Memory_Palace_Functionality.png">
+		<p>For our object detection model we initially wanted to use Yolo V3 as it's a strong and very commonly used object detection model but ran into quite a few issues with running it on a windows instance as the owner develops it on Linux. So at first we used a Yolo V1 model which was pretrained on the MS Coco dataset. But we quickly realized it was poorly trained and only had around 80 labels which just wouldn't do. As well, it kept thinking Siddhartha and I were bicycles, It was quite confident as well... Maybe it knows something we don't.</p>
+		<img class="blog-img" src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/calHacksBicycle.png">
+		<p>So after a few hours of playing with different models we eventually settled on the MASK R-CNN which had pretty good accuracy and most importantly, ran inference quickly. As we were doing real time inference on the model and wanted to provide at least 30 frames per second we needed a fast and accurate model.<img src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/calHacks3.png" style="align-items: center;"> At the very least it knew that we were people now.</p>
+
+		<h2>The voice recognition</h2>
+		<p>Using Google's machine learning API was kind of annoying to set up but thankfully there were engineers from Google at the venue which helped us set up our API keys and get used to the environment. Once it was set up, using the model to run real time inference on the audio was surprisingly easy. I just ran the model and put in keywords to allow for voice commands. When it heard a "remember" or other synonyms it would cut out filler words and identify the key the user wanted to tag then it would send the key and command to the Python 3 server.</p>
+		<p>The only real issues we had with the API was that you could only run it for sixty seconds at a time so we had to restart the service every minute and that Google required Python 2.7 but our TensorFlow model required 3.5. If we had time it would have been a lot easier to use a different pretrained model that could run on 3.5 and run the object detection and voice recognition models on the same server but in the end we made it work.</p>
+		<img class="blog-img" src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/Memory_Palace_Commands.png">
+		
+		<h2>Putting it all together</h2>
+		<p>Once Siddhartha and I had finished each part we had around six hours left to put it all together. It definitely was the most stressful part as we had a lot moving parts. The glasses, the Python 3 server, the Python 2 server, the database, the UI that Katherine and Victor made. Especially because at that point we all had been up for around forty to fifty hours with maybe one or two hours of sleep. It took a lot of work but we put it all together, however janky it might have been.</p>
+		<img class="blog-img" src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/calHacksTeam.png">
+	</div>
+
+  {% include 'footer.html' %}
+</div><!--#main-container -->
+
+</body>
+</html>
+

@@ -22,6 +22,10 @@ def robots():
     res.mimetype = 'text/plain'
     return res
 
+@app.route('/blog/calhacks')
+def calhacks():
+    return render_template('blog_calhacks.html')
+
 @app.errorhandler(404)
 def page_not_found(e):
     # note that we set the 404 status explicitly
