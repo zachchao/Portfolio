@@ -34,6 +34,10 @@ def calhacks():
 def sacHacks():
     return render_template('blog/sacHacks.html')
 
+@app.route('/simulations')
+def simulations():
+    return render_template('simulations/index.html')
+
 @app.errorhandler(404)
 def page_not_found(e):
     # note that we set the 404 status explicitly
