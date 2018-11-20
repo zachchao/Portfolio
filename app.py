@@ -30,9 +30,9 @@ def blog():
 def calhacks():
     return render_template('blog/calhacks.html')
 
-@app.route('/blog/sachacks')
-def sachacks():
-    return render_template('blog/sachacks.html')
+@app.route('/blog/sacHacks')
+def sacHacks():
+    return render_template('blog/sacHacks.html')
 
 @app.errorhandler(404)
 def page_not_found(e):
