@@ -1,7 +1,7 @@
 [
 	[
 		{
-			"href" : "/blog/sachacks",
+			"href" : "/blog/sacHacks",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/sacHacks.png",
 			"title" : "IOT security network",
 			"description" : "Won first place in beginner hack, first in tech domain, second in SmartCar API and third overall out of 400+ hackers at SacHacks. We built Carmour, a platform which uses our community's cars to make our streets a bit safer. Implemented an Inception V2 model to detect crime from cameras installed on cars. Notifying the network through SMS using Twilio, visualizations done in a web application with Google's Map API. As well provided smart contract system through Ethereum's network.",
