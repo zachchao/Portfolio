@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% include 'header.html' %}
+</head>
+<body>
+
+<style> 
+  {% include 'css/staple.css' %}
+  {% include 'css/blog.css' %}
+  #firstParallax{
+    /* The image used */
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/sacHacks.png');
+
+    /* Set a specific height */
+    height: 12rem;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: relative;
+  }
+</style>
+
+<div id="main-container">
+	<div id="firstParallax">
+    {% include 'navbar.html' %}
+    <h1 class="blogHeading"><img src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/carmourLogo.png" height="150px" style="margin-top: -50px; margin-bottom: -50px;"></h1>
+		<p class="blogDate">19 Nov 2018</p>
+  </div>
+
+	<div id="blog-container">
+		<h2>Introduction</h2>
+		<img src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/sacHacks.png" style="width: 60%; float: right;">
+		<p>This blog post is about what I did at Sac Hacks. The first intercollegiate hackathon in Sacremento with 400+ hackers. This year's sponsors were companies like EA, XYO, UC Davis, GitHub, SmartCar, Nvidia, Twillio, Google and more. If you'd like to find out more click <a href="http://www.sachacks.io">here</a>. I went with Siddhartha Datta, who I had met at the GM hackathon and did Cal Hacks with. Rea Savla, my lab partner for machine structures and her friend, Tushar Jain.</p>
+		<p>Going in, Siddhartha and I knew we wanted to do something with ML because thats where both of our interests lie but beyond that we had no biases. What I did know was that I wanted to take my mistakes from Cal Hacks and learn from them. My goal was to have a more finished and polished deliverable at the end which would require better communication and management across our team. Especially if we went for something bigger, which we did.</p>
+		<p>We had a pretty rough start in the beginning because we couldn't settle on a strong idea which took advantage of the various API's and companies presented to us. Each idea had either been done before, was too simple, too infeasible or just not practical enough. We had 24 hours to come up with an idea and execute it and it took us 6 hours to finally decide upon an idea. Definitely the most painful and difficult part of the process, but as we would later find, worth it.</p>
+
+		<h2>Our Project</h2>
+		<p>We had three main parts to our project, detecting crime automatically using cars, notifying the network and rewarding cars for being part of the network.</p>
+
+		<h3>Identifying Crime</h3>
+		<img src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/sacHacks2.jpg" style="float: left;">
+		<p>This part was mainly Siddhartha's role as only him and I have a lot of experience developing machine learning solutions and I was the only one who could do full stack to bring all of the pieces together. He used an inception v2 R-CNN trained on a weapons dataset. The idea was to place cameras in each car in the network, or for newer cars simply access their built in cameras, and use the model to run real time inference to detect suspicious activity. As we didn't have guns or a camera we used our webcam to demo this. You can see Siddhartha's wonderful acting <a href="https://drive.google.com/file/d/1eAtoDcVOBCJu6MnvA7Jl5Mzani7YgUK7/view?usp=sharing">here</a>. And I put a picture of our model's structure below.</p>
+		<img src="https://cloud.google.com/tpu/docs/images/inceptionv3onc--oview.png">
+
+		<h3>Notifying the network</h3>
+		<p>We did this in two ways, SMS and a web application. Rea and Tushar were in charge of getting the car's geolocation, odometer, locking all surrounding cars and sending out an SMS when a threat was detected by the model. For this they used SmartCar's API which gave us access to the car's GPS, odometer and locking mechanisms. For the SMS they used Twillio and NoonLight which let them send texts to those in the network as well as the police.</p>
+		<img src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/crimeVis.PNG" style="width: 100%;">
+		<p>I was in charge of the web application (you can see <a href="https://sachacks.herokuapp.com/">here</a>) which needed to visualize the crimes, where the car was when it saw the crime and the rewards for each car in the network. I used Flask to build the web app, Google Cloud Platform's Map API and some JavaScript to visualize the crime data, Ethereum's API to access the ledger and Twitter's bootstrap for some of the CSS. When crime data was pushed to the database it would all be visualized here, when each dot is clicked you can view the frame which set the model off as well as the location and time. Each of the paw prints represents where the car saw the crime. Finally, the ledger shows the rewards each car got for detecting a crime.</p>
+
+		<h3>Rewarding Cars</h3>
+		<p>Since this is meant to be a community solution to a real problem we wanted to give the power to the masses by allowing anyone to put up rewards for detecting crimes in their neighborhood. So we turned to smart contracts with Ethereum, letting users and companies alike put up rewards.</p> 
+		<img src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/ledgerVis.PNG" style="width: 100%;">
+		<img src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/smartContractVis.PNG" style="float: right; width: 60%;">
+		<p>Rea was the only one who had experience with blockchain before so she was in charge of making the smart contracts, though luckily she taught us how they worked along the way. The idea is that a community could put up a reward for finding crimes in their area and if a crime was found the user would get a payment as a function of how far they had driven in our network and the severity of the crime detected. The first would be gotten with SmartCar's API and the second with our crime detection model. Allowing users to place rewards was very important as we are all from Berkeley, though its a great school we have a lot of crime around here and we would love to be able to give power to student's.</p>
+		<h5>The smart contract Rea wrote in Solidity</h5>
+		<textarea rows="6" disabled="true" style="border: none; resize: none; width: 100%;">
+      <!doctype html>
+      <html>
+        <body>
+          Hello QNimate!!!
+        </body>
+      </html>
+	  </textarea>
+
+	  <h3>Putting it all together</h3>
+		<p>My main goal this time was to have a polished and cohesive deliverable a the end. But using so many API's and having so many moving parts, this was definitely the hardest part of the project. Overall the APIs and frameworks we used were
+		<ul>
+			<li>SmartCar for Odometer, GPS and locking mechanism</li>
+			<li>Twillio for sending SMS to the network</li>
+			<li>NoonLight to send tips and alerts to the police</li>
+			<li>Tensorflow for running the detection model</li>
+			<li>OpenCV to draw bounding boxes around the crime</li>
+			<li>Flask for the web application</li>
+			<li>Heroku to deploy the app live</li>
+			<li>Solidity for the smart contracts</li>
+			<li>Ethereum network to read and write payments</li>
+			<li>Google's Map API for visualizing crime data</li>
+		</ul>
+		<p>So one thing I learned from my last hackathon was to make it clear the input and output each person would be expecting for their parts. Explaining that images were to be placed into a folder with a certain naming scheme to provide metadata, that the ledger should output JSON data, etc. Taking the time to work out the entire workflow and formats of each piece made each piece fit into the full product much easier. It also helped that I had such a great team, Siddhartha and I had worked together before and are good friends, Rea and I work together every week in machine structures and she has known Tushar for a long time. Having good communication was the only way we were able to put together an application with so many moving parts and have a great presentation at the end.</p>
+
+		<h3>Awards</h3>
+		<p>We were lucky and won four awards.</p>
+		<img src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/firstBeginnerHack.jpg">
+		<p>This was my third hackathon, Siddhartha's fourth and Rea and Tushar's first hackathon so we won best beginner hack.</p>
+		<img src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/firstTechDomain.jpg">
+		<p>They liked our name which Tushar and Rea spent two hours coming up with and our logo which Tushar spent an hour creating so we won best tech domain!</p>
+		<img src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/secondSmartCar.jpg">
+		<p>The SmartCar team was extremely kind, they helped us use their API and work it into our product, hopefully we will be able to work with them later on. They awarded us second place for using their API</p>
+		<img src="https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/thirdOverall.jpg">
+		<p>The one we are most proud of, third place overall, we were all shocked that we won an MLH hackathon and Tushar loves the medal. The MLH guys were all really nice and helped us with our hardware needs as well as our domain issues.</p>
+		<p>A big thank you to the SacHacks team for putting on the event, the SmartCar team for helping us with their API and all their support through the event, the XYO blockchain team for inviting us to present at their seminar next month and helping us create and deploy our smart contract, the MLH team for helping with the event, our hardward needs and all other issues we had and of course Siddhartha, Rea and Tushar for all their hardwork!</p>
+
+
+
+	</div>
+
+  {% include 'footer.html' %}
+  {% include 'resumeModal.html' %}
+</div><!--#main-container -->
+</body>
+</html>
+
