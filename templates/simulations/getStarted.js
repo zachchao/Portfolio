@@ -7,8 +7,8 @@ var height;
 var colorNum;
 var cycleSize;
 function setup() {
-	width = 800;
-	height = 800;
+	width = window.innerWidth;
+	height = window.innerHeight;
 	colorNum = 0;
 	cycleSize = 12;
 	x = int(random(width));
