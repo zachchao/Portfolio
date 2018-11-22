@@ -66,7 +66,7 @@
 			"href" : "",
 			"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/expectimax.png",
 			"title" : "Expectimax Game AI",
-			"description" : "Won fourth out of six hundred in Berkeley competition for best AI to solve a complicated game with up to ten dice. Implemented expectimax using dynamic programming and probability theory. Winning fourth out of six hundred.",
+			"description" : "Won fourth out of six hundred in Berkeley competition for best AI to solve a complicated game with up to ten dice. Implemented expectimax using dynamic programming and probability theory.",
 			"tags" : [
 				"Game Theory", 
 				"Competition",
