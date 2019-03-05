@@ -235,8 +235,17 @@
     color: white !important;
     cursor: pointer;
     font-size: 20px;
-    text-decoration: underline;
     font-family: franklin-gothic-urw;
+  }
+
+  .modal-dialog{
+    max-width: 1000px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .modal-content{
+    height: 100%;
   }
 </style>
 
@@ -263,7 +272,7 @@
           <a class="tabText" onclick="experienceClick()" id="experienceButton">EXPERIENCE</a>
         </div>
         <div class="col-3" style="text-align: center;">
-          <a class="tabText">CONTACT ME</a>
+          <a class="tabText" href="mailto:zachchao@berkeley.edu?subject=Hi%20Zach!">CONTACT ME</a>
         </div>
       </div>
     </div>
@@ -291,6 +300,7 @@
 function aboutMeClick(){
   document.querySelector("#aboutMeButton").style["text-decoration"] = "underline"
   document.querySelector("#projectsButton").style["text-decoration"] = "none"
+  document.querySelector("#experienceButton").style["text-decoration"] = "none"
 
   document.querySelector("#aboutMe").style["display"] = "initial"
   document.querySelector("#projects").style["display"] = "none"
@@ -300,6 +310,7 @@ function aboutMeClick(){
 function projectsClick(){
   document.querySelector("#aboutMeButton").style["text-decoration"] = "none"
   document.querySelector("#projectsButton").style["text-decoration"] = "underline"
+  document.querySelector("#experienceButton").style["text-decoration"] = "none"
 
   document.querySelector("#aboutMe").style["display"] = "none"
   document.querySelector("#projects").style["display"] = "initial"
