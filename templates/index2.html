@@ -13,10 +13,9 @@
 
   #firstParallax{
     /* The image used */
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/img_parallax2.jpg');
-
-    /* Set a specific height */
-    height: 100%;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/img_parallax4.jpg');
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80');
+    color: white;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -29,7 +28,7 @@
 
   #secondParallax{
     /* The image used */
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/img_parallax4.jpg');
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://images.unsplash.com/photo-1551025578-9d65f4307723?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80');
 
     /* Set a specific height */ 
     height: 900px;
@@ -48,7 +47,7 @@
   
   #thirdParallax{
     /* The image used */
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/img_parallax5.jpg');
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://images.unsplash.com/photo-1551309292-e185c0b6e22a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80');
 
     /* Set a specific height */
 
@@ -64,20 +63,16 @@
   }
 
   #introContainer{
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    width: 70%;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
   }
 
   .headingText{
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 37px;
+    font-family: utopia-std-display, serif;
+    font-size: 50px;
     color: white;
-    text-align: left;
-    font-weight: 575;
+    width: 100%;
   }
 
   .card-img-top{
@@ -216,81 +211,51 @@
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
   }
+
+  .tabText{
+    color: white !important;
+    cursor: pointer;
+    font-size: 20px;
+    text-decoration: underline;
+    font-family: franklin-gothic-urw;
+  }
 </style>
 
 <div id="main-container">
   <div id="firstParallax">
     {% include 'navbar.html' %}
     <div id="introContainer">
-      <span id="introText" class="headingText">Hi, I'm Zach. I love artificial intelligence, data science, and computer science. Look below to learn more about me and see my projects!</span>
-    </div>
-  </div>
-
-  <div id="secondParallax">
-    <div id="console">
-      <div id="consoleHeader">
-
-      </div>
-      <div id="consoleBody">
-        <span id="consoleText">
-          >>> Zach.location<br>
-          'Berkeley, CA'<br>
-          <br>
-          >>> Zach.education<br>
-          {'school' : 'Univeristy of California, Berkeley', 'gpa' : 3.7, 'expectedGraduation' : 'May 2020', "major" : "Computer Science"}<br> 
-          <br>
-          >>> Zach.interests<br>
-          '["Artificial Intelligence", "Data Science", "Efficient Algorithms", "Weightlifting", "Triathalons", "Entrepreneurship"]'
-          <br>
-          <br>
-          >>> Zach.email<br>
-          'zachchao@berkeley.edu'<br>
-          <br>
-          >>> Zach.resume<br>
-          <a href='#pdfModal' data-toggle='modal'> resume.pdf</a><br>
-          <br>
-          >>>
-        </span>
-      </div>
-    </div>
-  </div>
-
-  <div id="thirdParallax">
-    <div class="container">
-      <div class="row" style="margin-bottom: 25px;">
-        <h2 class="headingText" style="width: 100%;">Projects</h2>
-      </div>
-      <!-- Double for loop through json object to make the cards -->
-      {% for row in cardData | batch(2)%}
       <div class="row">
-        {% for card in row %}
-        <div class="col-lg-6">
-          {% if card['href'] != "" %}
-          <a href={{ card['href'] }}>
-          {% endif %}
-            <div class="card">
-              {% if card['href'] != "" %}
-              <div class="corner-ribbon">Click Me!</div>
-              {% endif %}
-              <img class="card-img-top" src={{ card['image_url'] }} alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">{{ card['title'] }}</h5>
-                <p class="card-text">{{ card['description'] }}</p>
-              </div>
-              <div class="card-footer">
-                {% for tag in card['tags'] %}
-                <span class="card-tag">{{tag}}</span>
-                {% endfor %}
-              </div>
-            </div>
-          {% if card['href'] != "" %}
-          </a>
-          {% endif %}
-        </div> 
-        {% endfor %}
+        <p class="headingText">Hi, I'm Zach!<br>Your favorite programmer in the Bay.</p>
       </div>
-      {% endfor %}
+
+      <div class="row">
+        <p style="max-width: 500px; margin: 0 auto; font-family: franklin-gothic-urw; font-size: 18px;">I love artificial intelligence, my rabbit and my sisters. AI because of the ability it gives us to answer questions and fix problems we could have never dreamed of before. My rabbit because he helps me debug and keeps my company. My sisters because one makes me cookies and the other is my weightlifting buddy!</p>
+      </div>
+
+      <div class="row" style="margin-top: 40px;">
+        <div class="col-3" style="text-align: center;">
+          <a class="tabText" onclick="aboutMeClick()" id="aboutMeButton" style="text-decoration: underline;">ABOUT ME</a>
+        </div>
+        <div class="col-3" style="text-align: center;">
+          <a class="tabText" onclick="projectsClick()" id="projectsButton">PROJECTS</a>
+        </div>
+        <div class="col-3" style="text-align: center;">
+          <a class="tabText">EXPERIENCE</a>
+        </div>
+        <div class="col-3" style="text-align: center;">
+          <a class="tabText">CONTACT ME</a>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <div id="aboutMe">
+    {% include 'aboutMeStub.html' %}
+  </div>
+
+  <div id="projects" style="display: none;">
+    {% include 'projectsStub.html' %}
   </div>
   {% include 'footer.html' %}
 </div><!--#main-container -->
@@ -299,14 +264,34 @@
 </body>
 
 <script>
+
+function aboutMeClick(){
+  document.querySelector("#aboutMeButton").style["text-decoration"] = "underline"
+  document.querySelector("#projectsButton").style["text-decoration"] = "none"
+
+  document.querySelector("#aboutMe").style["display"] = "initial"
+  document.querySelector("#projects").style["display"] = "none"
+  //document.querySelector("#experience").style["display"] = "none"
+}
+
+function projectsClick(){
+  document.querySelector("#aboutMeButton").style["text-decoration"] = "none"
+  document.querySelector("#projectsButton").style["text-decoration"] = "underline"
+
+  document.querySelector("#aboutMe").style["display"] = "none"
+  document.querySelector("#projects").style["display"] = "initial"
+  //document.querySelector("#experience").style["display"] = "none"
+}
+
+
 // Does the typing animation for the heading
 // Clears it so that people who don't use JS can still see it
-document.querySelector("#introText").innerHTML = "";
-var typed = new Typed("#introText", {
-  strings: ["Hi, I'm Zach. ^1000 I love artificial intelligence, data science, and computer science. ^2500", "Look below to learn more about me and see some of my projects!"],
-  typeSpeed: 20,
-  backSpeed: 10
-});
+// document.querySelector("#introText").innerHTML = "";
+// var typed = new Typed("#introText", {
+//   strings: ["Hi, I'm Zach. ^1000 I love artificial intelligence, data science, and computer science. ^2500", "Look below to learn more about me and see some of my projects!"],
+//   typeSpeed: 20,
+//   backSpeed: 10
+// });
 
 // Does the console typing animation
 document.querySelector("#consoleText").innerHTML = "";
@@ -340,20 +325,22 @@ function typeInConsole(){
     });
   }
 };
+
+typeInConsole();
  
 // Only activate the console typing animation when the user sees the console
-var element = $('#consoleHeader');
-$(window).scroll(function(){
-    var docViewTop = $(window).scrollTop();
-    var docViewBottom = docViewTop + $(window).height();
+// var element = $('#consoleHeader');
+// $(window).scroll(function(){
+//     var docViewTop = $(window).scrollTop();
+//     var docViewBottom = docViewTop + $(window).height();
 
-    var elemTop = $(element).offset().top;
-    var elemBottom = elemTop + $(element).height();
+//     var elemTop = $(element).offset().top;
+//     var elemBottom = elemTop + $(element).height();
 
-    if ((elemBottom <= docViewBottom) && (elemTop >= docViewTop)) {
-        typeInConsole();
-    }
-});
+//     if ((elemBottom <= docViewBottom) && (elemTop >= docViewTop)) {
+//         typeInConsole();
+//     }
+// });
 </script>
 </html>
 

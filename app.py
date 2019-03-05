@@ -8,9 +8,17 @@ app = Flask(__name__)
 # Images are aspect ratio 538x283
 @app.route('/')
 def home():
-    with open("cardText2.json") as f:
+    with open("projectsData.json") as f:
         cardData = json.loads(f.read())
     return render_template('index.html', cardData=cardData)
+
+@app.route('/index')
+def index2():
+    with open("projectsData.json") as f:
+        projectsData = json.loads(f.read())
+    with open("experienceData.json") as f:
+        experienceData = json.loads(f.read())
+    return render_template('index2.html', projectsData=projectsData, experienceData=experienceData)
 
 @app.route('/test')
 def test():
