@@ -14,7 +14,7 @@
   #firstParallax{
     /* The image used */
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/img_parallax4.jpg');
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80');
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://images.unsplash.com/photo-1510125964506-dc5a14f3ef4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80');
     color: white;
 
     /* Create the parallax scrolling effect */
@@ -47,7 +47,24 @@
   
   #thirdParallax{
     /* The image used */
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://images.unsplash.com/photo-1551309292-e185c0b6e22a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80');
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://images.unsplash.com/photo-1541506618330-7c369fc759b5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1301&q=80');
+
+    /* Set a specific height */
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: relative;
+
+    padding-top: 60px;
+  }
+
+  #fourthParallax{
+    /* The image used */
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/img_parallax4.jpg');
 
     /* Set a specific height */
 
@@ -66,6 +83,8 @@
     text-align: center;
     max-width: 900px;
     margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 10px;
   }
 
   .headingText{
@@ -230,7 +249,7 @@
       </div>
 
       <div class="row">
-        <p style="max-width: 500px; margin: 0 auto; font-family: franklin-gothic-urw; font-size: 18px;">I love artificial intelligence, my rabbit and my sisters. AI because of the ability it gives us to answer questions and fix problems we could have never dreamed of before. My rabbit because he helps me debug and keeps my company. My sisters because one makes me cookies and the other is my weightlifting buddy!</p>
+        <p style="max-width: 500px; margin: 0 auto; font-family: franklin-gothic-urw; font-size: 18px; margin-bottom: 50px;">I love artificial intelligence, my rabbit and my sisters. AI because of the ability it gives us to answer questions and fix problems we could have never dreamed of before. My rabbit because he helps me debug and keeps my company. My sisters because one makes me cookies and the other is my weightlifting buddy!</p>
       </div>
 
       <div class="row" style="margin-top: 40px;">
@@ -241,7 +260,7 @@
           <a class="tabText" onclick="projectsClick()" id="projectsButton">PROJECTS</a>
         </div>
         <div class="col-3" style="text-align: center;">
-          <a class="tabText">EXPERIENCE</a>
+          <a class="tabText" onclick="experienceClick()" id="experienceButton">EXPERIENCE</a>
         </div>
         <div class="col-3" style="text-align: center;">
           <a class="tabText">CONTACT ME</a>
@@ -257,6 +276,10 @@
   <div id="projects" style="display: none;">
     {% include 'projectsStub.html' %}
   </div>
+
+  <div id="experience" style="display: none;">
+    {% include 'experienceStub.html' %}
+  </div>
   {% include 'footer.html' %}
 </div><!--#main-container -->
 
@@ -271,7 +294,7 @@ function aboutMeClick(){
 
   document.querySelector("#aboutMe").style["display"] = "initial"
   document.querySelector("#projects").style["display"] = "none"
-  //document.querySelector("#experience").style["display"] = "none"
+  document.querySelector("#experience").style["display"] = "none"
 }
 
 function projectsClick(){
@@ -280,7 +303,17 @@ function projectsClick(){
 
   document.querySelector("#aboutMe").style["display"] = "none"
   document.querySelector("#projects").style["display"] = "initial"
-  //document.querySelector("#experience").style["display"] = "none"
+  document.querySelector("#experience").style["display"] = "none"
+}
+
+function experienceClick(){
+  document.querySelector("#aboutMeButton").style["text-decoration"] = "none"
+  document.querySelector("#projectsButton").style["text-decoration"] = "none"
+  document.querySelector("#experienceButton").style["text-decoration"] = "underline"
+
+  document.querySelector("#aboutMe").style["display"] = "none"
+  document.querySelector("#projects").style["display"] = "none"
+  document.querySelector("#experience").style["display"] = "initial"
 }
 
 
