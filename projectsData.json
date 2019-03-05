@@ -35,10 +35,10 @@
 		]
 	},
 	{
-		"href" : "",
+		"href" : "https://www.followminer.org/",
 		"image_url" : "https://s3-us-west-2.amazonaws.com/zach-chao-portfolio/followminer.jpg",
 		"title" : "Instagram Automation Service",
-		"description" : "Chrome extension which allows for simple bot integration to a web browser. Supplies automated user interaction and progress tracking. Currently over 100 users.",
+		"description" : "Chrome extension which allows for simple bot integration to a web browser. Supplies automated user interaction and progress tracking. Currently over 200 users.",
 		"tags" : [
 			"Full Stack",
 			"Front End",
