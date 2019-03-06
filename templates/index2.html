@@ -96,6 +96,7 @@
 
   .card-img-top{
     background-color: white;
+    transition: 0.5s;
   }
 
   .card{
@@ -107,25 +108,38 @@
     font-size: 20px;
     font-weight: 575;
     height: 100%;
-    min-height: 520px;
+    min-height: 480px;
+    transition: 0.5s;
   }
 
-  .card:hover .card-text{
-    display : initial;
+  .card:hover .card-text, .card:hover .card-title-hidden{
+    opacity : 1;
   }
 
-  .card:hover .card-img-top, .card:hover .card-note, .card:hover .corner-ribbon{
-    display : none;
+  .card:hover .card-img-top, .card:hover .card-note, .card:hover .corner-ribbon, .card:hover .card-title{
+    opacity : 0;
   }
 
   .card-text{
-    opacity: 0.9;
-    display: none;
+    opacity: 0;
+    position: absolute;
+    top: 70px;
+    transition: 0.5s;
+  }
+
+  .card-title-hidden{
+    font-size: 25px;
+    text-align: center;
+    top: 20px;
+    position: absolute;
+    opacity: 0;
+    transition: 0.3s;
   }
 
   .card-title{
     font-size: 22px;
     text-align: center;
+    transition: 0.5s;
   }
 
   .card-tag{
@@ -234,15 +248,27 @@
     left: -50px;
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
+    transition: 0.5s;
   }
 
   .tabText{
     color: white !important;
     cursor: pointer;
     font-size: 20px;
-    text-decoration: underline;
     font-family: franklin-gothic-urw;
+    height: 75px;
+    width: 100%;
+    border-radius: 0px;
+    background-color: #36393E;
+    border-color: #36393E;
+    border: 0;
   }
+
+  .resume-link{
+    color: #3a92c8 !important;
+  }
+
+
 </style>
 
 <div id="main-container">
@@ -254,23 +280,23 @@
       </div>
 
       <div class="row">
-        <p style="max-width: 500px; margin: 0 auto; font-family: franklin-gothic-urw; font-size: 18px; margin-bottom: 50px;">I love artificial intelligence, my rabbit and my sisters. AI because of the ability it gives us to answer questions and fix problems we could have never dreamed of before. My rabbit because he helps me debug and keeps my company. My sisters because one makes me cookies and the other is my weightlifting buddy!</p>
+        <p style="max-width: 500px; margin: 0 auto; font-family: franklin-gothic-urw; font-size: 18px; margin-bottom: 50px;">I love artificial intelligence, my rabbit and my sisters. AI because of the ability it gives us to answer questions and fix problems we could have never dreamed of before. My rabbit because he helps me debug and keeps my company. My sisters because they are my buddies.</p>
       </div>
     </div>
   </div>
 
-  <div class="row" style="background-color: #36393E; width: 100%; margin: 0 auto; padding: 15px;">
-    <div class="col-3" style="text-align: center;">
-      <a class="tabText" onclick="aboutMeClick()" id="aboutMeButton" style="text-decoration: underline;">ABOUT ME</a>
+  <div class="row" style="background-color: #36393E; width: 100%; margin: 0 auto;">
+    <div class="col-3" style="text-align: center; padding: 0;">
+      <button class="tabText btn btn-secondary" onclick="aboutMeClick()" id="aboutMeButton" style="background-color: #6c757d;">ABOUT ME</button>
     </div>
-    <div class="col-3" style="text-align: center;">
-      <a class="tabText" onclick="projectsClick()" id="projectsButton">PROJECTS</a>
+    <div class="col-3" style="text-align: center; padding: 0;">
+      <button class="tabText btn btn-secondary" onclick="projectsClick()" id="projectsButton">PROJECTS</button>
     </div>
-    <div class="col-3" style="text-align: center;">
-      <a class="tabText" onclick="experienceClick()" id="experienceButton">EXPERIENCE</a>
+    <div class="col-3" style="text-align: center; padding: 0;">
+      <button class="tabText btn btn-secondary" onclick="experienceClick()" id="experienceButton">EXPERIENCE</button>
     </div>
-    <div class="col-3" style="text-align: center;">
-      <a class="tabText">CONTACT ME</a>
+    <div class="col-3" style="text-align: center; padding: 0;">
+      <button class="tabText btn btn-secondary">CONTACT ME</button>
     </div>
   </div>
 
@@ -307,9 +333,9 @@
 // } 
 
 function aboutMeClick(){
-  document.querySelector("#aboutMeButton").style["text-decoration"] = "underline"
-  document.querySelector("#projectsButton").style["text-decoration"] = "none"
-  document.querySelector("#experienceButton").style["text-decoration"] = "none"
+  document.querySelector("#aboutMeButton").style["background-color"] = "#6c757d"
+  document.querySelector("#projectsButton").style["background-color"] = "#36393E"
+  document.querySelector("#experienceButton").style["background-color"] = "#36393E"
 
   document.querySelector("#aboutMe").style["display"] = "initial"
   document.querySelector("#projects").style["display"] = "none"
@@ -317,9 +343,9 @@ function aboutMeClick(){
 }
 
 function projectsClick(){
-  document.querySelector("#aboutMeButton").style["text-decoration"] = "none"
-  document.querySelector("#projectsButton").style["text-decoration"] = "underline"
-  document.querySelector("#experienceButton").style["text-decoration"] = "none"
+  document.querySelector("#aboutMeButton").style["background-color"] = "#36393E"
+  document.querySelector("#projectsButton").style["background-color"] = "#6c757d"
+  document.querySelector("#experienceButton").style["background-color"] = "#36393E"
 
   document.querySelector("#aboutMe").style["display"] = "none"
   document.querySelector("#projects").style["display"] = "initial"
@@ -327,9 +353,9 @@ function projectsClick(){
 }
 
 function experienceClick(){
-  document.querySelector("#aboutMeButton").style["text-decoration"] = "none"
-  document.querySelector("#projectsButton").style["text-decoration"] = "none"
-  document.querySelector("#experienceButton").style["text-decoration"] = "underline"
+  document.querySelector("#aboutMeButton").style["background-color"] = "#36393E"
+  document.querySelector("#projectsButton").style["background-color"] = "#36393E"
+  document.querySelector("#experienceButton").style["background-color"] = "#6c757d"
 
   document.querySelector("#aboutMe").style["display"] = "none"
   document.querySelector("#projects").style["display"] = "none"
@@ -368,7 +394,7 @@ function typeInConsole(){
       `'zachchao@berkeley.edu'<br><br>>>>` ^250\
       \
       Zach.resume ^100 <br> \
-      `<a href='#pdfModal' data-toggle='modal'> resume.pdf</a><br><br>>>>` ^250\
+      `<a style='cursor: pointer;' class='resume-link' data-toggle='modal' data-target='#exampleModal'>resume.pdf</a><br><br>>>>` ^250\
       \
       "],
       typeSpeed: 20,
