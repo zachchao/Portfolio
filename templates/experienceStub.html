@@ -13,9 +13,10 @@
             <div class="corner-ribbon">Click Me!</div>
             {% endif %}
             <img class="card-img-top" src={{ card['image_url'] }} alt="Card image cap">
-            <div class="card-body">
+            <div class="card-body" style="padding-bottom: 0px;">
               <h5 class="card-title">{{ card['title'] }}</h5>
               <p class="card-text">{{ card['description'] }}</p>
+              <p style="float: right; color: #BDC3C7; font-size: 18px;" class="card-note">Hover for more</p>
             </div>
             <div class="card-footer">
               {% for tag in card['tags'] %}

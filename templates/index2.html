@@ -107,15 +107,20 @@
     font-size: 20px;
     font-weight: 575;
     height: 100%;
+    min-height: 520px;
   }
 
-  .card:hover {
-    transform: scale(1.1);
-    text-decoration: none;
-  } 
+  .card:hover .card-text{
+    display : initial;
+  }
+
+  .card:hover .card-img-top, .card:hover .card-note, .card:hover .corner-ribbon{
+    display : none;
+  }
 
   .card-text{
     opacity: 0.9;
+    display: none;
   }
 
   .card-title{
@@ -235,17 +240,8 @@
     color: white !important;
     cursor: pointer;
     font-size: 20px;
+    text-decoration: underline;
     font-family: franklin-gothic-urw;
-  }
-
-  .modal-dialog{
-    max-width: 1000px;
-    width: 100%;
-    height: 100%;
-  }
-
-  .modal-content{
-    height: 100%;
   }
 </style>
 
@@ -254,31 +250,32 @@
     {% include 'navbar.html' %}
     <div id="introContainer">
       <div class="row">
-        <p class="headingText">Hi, I'm Zach!<br>Your favorite programmer in the Bay.</p>
+        <p class="headingText">Hi, I'm Zach!<br>I never go outside!</p>
       </div>
 
       <div class="row">
         <p style="max-width: 500px; margin: 0 auto; font-family: franklin-gothic-urw; font-size: 18px; margin-bottom: 50px;">I love artificial intelligence, my rabbit and my sisters. AI because of the ability it gives us to answer questions and fix problems we could have never dreamed of before. My rabbit because he helps me debug and keeps my company. My sisters because one makes me cookies and the other is my weightlifting buddy!</p>
       </div>
-
-      <div class="row" style="margin-top: 40px;">
-        <div class="col-3" style="text-align: center;">
-          <a class="tabText" onclick="aboutMeClick()" id="aboutMeButton" style="text-decoration: underline;">ABOUT ME</a>
-        </div>
-        <div class="col-3" style="text-align: center;">
-          <a class="tabText" onclick="projectsClick()" id="projectsButton">PROJECTS</a>
-        </div>
-        <div class="col-3" style="text-align: center;">
-          <a class="tabText" onclick="experienceClick()" id="experienceButton">EXPERIENCE</a>
-        </div>
-        <div class="col-3" style="text-align: center;">
-          <a class="tabText" href="mailto:zachchao@berkeley.edu?subject=Hi%20Zach!">CONTACT ME</a>
-        </div>
-      </div>
     </div>
   </div>
 
-  <div id="aboutMe">
+  <div class="row" style="background-color: #36393E; width: 100%; margin: 0 auto; padding: 15px;">
+    <div class="col-3" style="text-align: center;">
+      <a class="tabText" onclick="aboutMeClick()" id="aboutMeButton" style="text-decoration: underline;">ABOUT ME</a>
+    </div>
+    <div class="col-3" style="text-align: center;">
+      <a class="tabText" onclick="projectsClick()" id="projectsButton">PROJECTS</a>
+    </div>
+    <div class="col-3" style="text-align: center;">
+      <a class="tabText" onclick="experienceClick()" id="experienceButton">EXPERIENCE</a>
+    </div>
+    <div class="col-3" style="text-align: center;">
+      <a class="tabText">CONTACT ME</a>
+    </div>
+  </div>
+
+
+  <div id="aboutMe" style="display: initial;">
     {% include 'aboutMeStub.html' %}
   </div>
 
@@ -296,6 +293,18 @@
 </body>
 
 <script>
+
+// function cardMouseOver(card){
+//   card.childNodes[1].style["display"] = "none";
+//   card.childNodes[3].childNodes[3].style["display"] = "initial";
+//   card.childNodes[3].childNodes[5].style["display"] = "none";
+// }
+
+// function cardMouseLeave(card){
+//   card.childNodes[1].style["display"] = "initial";
+//   card.childNodes[3].childNodes[3].style["display"] = "none";
+//   card.childNodes[3].childNodes[5].style["display"] = "initial";
+// } 
 
 function aboutMeClick(){
   document.querySelector("#aboutMeButton").style["text-decoration"] = "underline"
